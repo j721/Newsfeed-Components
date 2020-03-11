@@ -34,7 +34,7 @@ let menuItems = [
   
 */
 
- //set up structure of elements. Menu should be in header. list should be under menu
+ //set up structure of elements. Menu should be under header. list should be under menu
  const header = document.querySelector('.header');
  const menuButton = document.querySelector('.menu-button');
  
