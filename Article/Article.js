@@ -101,14 +101,71 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
+  
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+
+function createArticle (title, date,p1,p2,p3){
+
+  //create elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+
+//set up structure to elements. Append to article div
+
+  article.append(articleTitle);
+  article.append(articleDate);
+  article.append(paragraph1);
+  article.append(paragraph2);
+  article.append(paragraph3);
+  article.append(expandButton);
+ 
+  //Add classes to elements that have class in html 
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+
+//add textContent to elements
+
+articleTitle.textContent= title;
+articleDate.textContent = date; 
+paragraph1.textContent = p1;
+paragraph2.textContent = p2;
+paragraph3.textContent = p3; 
+expandButton.textContent = 'expand';
+
+//button events
+
+expandButton.addEventListener('click', (event)=>{
+  article.classList.toggle("article-open")
+});
+
+return article
+}
+
+const newArticles = document.querySelector('.articles');
+// console.log(articles);
+
+data.forEach(item =>{
+  newArticles.appendChild(
+    createArticle(item.title, item.date, item.paragraph1, item.paragraph2, item.paragraph3)
+  );
+});
