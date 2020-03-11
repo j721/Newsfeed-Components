@@ -166,6 +166,6 @@ const newArticles = document.querySelector('.articles');
 
 data.forEach(item =>{
   newArticles.appendChild(
-    createArticle(item.title, item.date, item.paragraph1, item.paragraph2, item.paragraph3)
+    createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph)
   );
 });
