@@ -54,7 +54,7 @@ function createMenu(array){
     
   //set class names
 
-    menu.classList.add('menu');
+    menu.classList.add('menu');       
 
     //set content
 
@@ -76,3 +76,9 @@ function createMenu(array){
 menuItems.map(item =>{
   header.append(createMenu(item));
 })
+
+//Stretch gsap 
+
+
+
+gsap.from('.menu--open', {duration: 2,width:0, border: '100px solid red'})
