@@ -70,7 +70,7 @@ function createMenu(array){
     menuButton.addEventListener('click', event =>{
       menu.classList.toggle('menu--open');
       //Stretch gsap animation
-      gsap.from('.menu--open', {duration: 3, x: -100})
+      gsap.to('.menu--open', {duration: 3, rotation:360,scale: 1, x: 920})
     })
 
   return menu 
