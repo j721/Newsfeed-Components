@@ -56,7 +56,8 @@ function createMenu(array){
 
     menu.classList.add('menu');       
 
-    //set content
+    //set content. Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
+    //Add those items to the <ul>
 
     menuItems.forEach(element =>{
       const item = document.createElement('li');
@@ -68,6 +69,8 @@ function createMenu(array){
 
     menuButton.addEventListener('click', event =>{
       menu.classList.toggle('menu--open');
+      //Stretch gsap animation
+      gsap.from('.menu--open', {duration: 3, x: -100})
     })
 
   return menu 
@@ -77,8 +80,4 @@ menuItems.map(item =>{
   header.append(createMenu(item));
 })
 
-//Stretch gsap 
 
-
-
-gsap.from('.menu--open', {duration: 2,width:0, border: '100px solid red'})
