@@ -154,6 +154,8 @@ expandButton.textContent = 'expand';
 
 expandButton.addEventListener('click', (event)=>{
   article.classList.toggle("article-open")
+  //animation 
+  gsap.to('.article-open',{duration:3, rotationX:360});
 });
 
 return article
@@ -167,3 +169,6 @@ data.forEach(item =>{
     createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph)
   );
 });
+
+
+  
