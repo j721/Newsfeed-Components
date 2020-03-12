@@ -129,12 +129,10 @@ function createArticle (title, date,p1,p2,p3){
 
 //set up structure to elements. Append to article div
 
-  article.append(articleTitle);
-  article.append(articleDate);
-  article.append(paragraph1);
-  article.append(paragraph2);
-  article.append(paragraph3);
-  article.append(expandButton);
+  article.append(articleTitle, 
+    articleDate,paragraph1, paragraph2,paragraph3,
+    expandButton);
+ 
  
   //Add classes to elements that have class in html 
 
