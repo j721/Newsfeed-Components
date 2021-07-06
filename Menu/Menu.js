@@ -33,3 +33,51 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+ //set up structure of elements. Menu should be under header. list should be under menu
+ const header = document.querySelector('.header');
+ const menuButton = document.querySelector('.menu-button');
+ 
+
+
+//create function 
+function createMenu(array){
+
+  //create elements 
+  const menu = document.createElement('div');
+  const list = document.createElement('ul');
+
+  //append
+
+  header.append(menu);
+  menu.append(list);
+    
+  //set class names
+
+    menu.classList.add('menu');       
+
+    //set content. Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
+    //Add those items to the <ul>
+
+    menuItems.forEach(element =>{
+      const item = document.createElement('li');
+      item.textContent = element; 
+      list.append(item);
+    })
+
+    //set up event listener
+
+    menuButton.addEventListener('click', event =>{
+      menu.classList.toggle('menu--open');
+      //Stretch gsap animation
+      gsap.to('.menu--open', {duration: 3, rotation:360,scale: 1, x: 920})
+    })
+
+  return menu 
+}
+
+menuItems.map(item =>{
+  header.append(createMenu(item));
+})
+
+
